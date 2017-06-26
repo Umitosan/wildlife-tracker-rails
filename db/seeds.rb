@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# rails db:seed command
+
+  animals = Animal.create([{ name: 'Skunk' }, { name: 'Platypus' }, { name: 'Dragon' }, { name: 'Ring-tailed Lemur' }])

@@ -18,7 +18,6 @@ class SightingsController < ApplicationController
   def edit
     @animal = Animal.find(params[:animal_id])
     @sighting = Sighting.find(params[:id])
-    render :edit
   end
 
   def update

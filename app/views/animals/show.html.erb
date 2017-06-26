@@ -6,7 +6,7 @@
   <ul>
     <% @animal.sightings.each do |sighting| %>
       <li>
-        <%= sighting.date %>
+        <%= "Date: #{sighting.date}. Latitude: #{sighting.lat}; Longitude: #{sighting.lng}" %>
         <%= link_to "Edit", edit_animal_sighting_path(@animal, sighting) %> |
         <%= link_to "Delete", animal_sighting_path(@animal, sighting),
                                  :data => { :method => "delete"} %>
@@ -17,8 +17,10 @@
   <p>There are no sightings yet!</p>
 <% end %>
 
-<p><%= link_to "Edit", edit_animal_path(@animal) %></p>
-<p><%= link_to "Delete", animal_path(@animal),
+<p><%= link_to "Add a sighting", new_animal_sighting_path(@animal) %></p>
+
+<p><%= link_to "Edit Animal", edit_animal_path(@animal) %></p>
+<p><%= link_to "Delete Animal", animal_path(@animal),
                          :data => { :method => "delete"} %></p>
 
 <p><%= link_to "Return Home", animals_path %></p>

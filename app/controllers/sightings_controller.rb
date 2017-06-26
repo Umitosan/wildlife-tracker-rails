@@ -9,6 +9,7 @@ class SightingsController < ApplicationController
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new(sighting_params)
     if @sighting.save
+      flash[:notice] = "Sighting successfully added!"
       redirect_to animal_path(@sighting.animal)
     else
       render :new
@@ -24,6 +25,7 @@ class SightingsController < ApplicationController
     @animal= Animal.find(params[:animal_id])
     @sighting = Sighting.find(params[:id])
     if @sighting.update(sighting_params)
+      flash[:notice] = "Sighting successfully updated!"
       redirect_to animal_path(@sighting.animal)
     else
       render :edit
